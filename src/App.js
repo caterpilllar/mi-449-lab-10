@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 
@@ -52,15 +51,6 @@ function GameLibrary(){
   return(
     <ul>{listGames}</ul>
   )
-}
-
-function MagicButton() {
-  return (
-    <>
-      <h3>this is a magic button</h3> 
-      <button>Magic</button>
-    </>
-  );
 }
 
 
