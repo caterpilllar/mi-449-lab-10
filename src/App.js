@@ -1,5 +1,15 @@
 import './App.css';
 
+const cardgame = {
+  title: "Speed",  
+  deck: "Standard 52 card deck",
+  type: "shedding card game", 
+  image: "http://allaboutfunandgames.com/wp-content/uploads/2011/12/Speed-Card-Game-Set-up.jpg", 
+  width: "100", 
+  height: "100"
+};
+
+
 
 const boardgame = {
   title: "Dixit", 
@@ -37,6 +47,25 @@ function GameShelf(){
 }
 
 
+function CardTable(){
+  return (
+    <>
+      <h2>{cardgame.title} : {cardgame.type}</h2>
+      <p>{cardgame.deck}</p>
+      {cardgame.image &&
+        <img 
+          className='boxArt'
+          src={cardgame.image}
+          alt={cardgame.title + "box art"}
+          style={{width: cardgame.width, height: cardgame.height}}
+        />
+      }
+
+    </>
+
+  )
+}
+
 function GameLibrary(){
   const listGames = videogames.map(videogames => 
     <li
@@ -58,8 +87,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <GameShelf />
         <GameLibrary />
+        <GameShelf />
+        <CardTable />
       </header>
       
     </div>
